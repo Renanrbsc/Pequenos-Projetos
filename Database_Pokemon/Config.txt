@@ -1,0 +1,25 @@
+-------------------- Requeriments --------------------
+#
+# # ---- Flask
+# # ---- Instalação do Framework WEB
+# # --- pip3 install flask
+#
+# # ---- Flask RestFul
+# # ---- Instalação da API
+# # --- pip3 install flask_restful
+#
+# # ---- Flask MySQLdb
+# # ---- Instalação do framework com conector
+# # --- pip3 install flask_mysqldb
+#
+# # ---- SqlAlchemy
+# # ---- Instalação do framework
+# # --- pip3 install sqlalchemy
+#
+# # ---- Conector do Mysql
+# # ---- Instalação do conector do Mysql Alchemy
+# # ---- pip3 install mysql-connector-python
+#
+--------------------              --------------------
+                    --------------
+--------------------              --------------------
