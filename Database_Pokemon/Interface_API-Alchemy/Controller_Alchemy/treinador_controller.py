@@ -10,18 +10,18 @@ class TreinadorController(BaseController):
         super().__init__(TreinadorDao())
 
     def post(self):
-        self.carrega_parametros()
-        treinador = TreinadorModel(self.nome, self.sobrenome, self.idade, self.cidade, self.id_pokemon)
-        return super().post(treinador)
+        return super().post(self.carrega_parametros())
 
     def put(self, id):
-        self.carrega_parametros()
-        treinador = TreinadorModel(self.nome, self.sobrenome, self.idade, self.cidade, self.id_pokemon, id)
-        return super().put(treinador)
+        return super().put(self.carrega_parametros(id))
 
-    def carrega_parametros(self):
-        self.nome = request.json['nome']
-        self.sobrenome = request.json['sobrenome']
-        self.idade = int(request.json['idade'])
-        self.cidade = request.json['cidade']
-        self.id_pokemon = request.json['id_pokemon']
+    def carrega_parametros(self, id=None):
+        model = TreinadorModel()
+        if id:
+            model.id = id
+        model.nome = request.json['nome']
+        model.sobrenome = request.json['sobrenome']
+        model.idade = int(request.json['idade'])
+        model.cidade = request.json['cidade']
+        model.id_pokemon = request.json['id_pokemon']
+        return model

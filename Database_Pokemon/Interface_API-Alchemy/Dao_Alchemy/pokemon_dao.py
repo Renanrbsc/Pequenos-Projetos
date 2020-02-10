@@ -23,8 +23,7 @@ class PokemonDao(BaseDao):
         return super().update(Pokemon, id)
 
     def remove(self, id):
-        search = super().get(PokemonModel, id)
-        return super().remove(search, id)
+        return super().remove(PokemonModel, id)
 
     def dict(self, pokemon):
         poke = {"codigo": pokemon.id, "nome": pokemon.nome, "tipo": pokemon.tipo, "altura": pokemon.altura,

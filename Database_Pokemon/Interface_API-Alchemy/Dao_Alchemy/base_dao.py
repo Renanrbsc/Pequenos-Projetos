@@ -27,8 +27,8 @@ class BaseDao:
         self.sessao.close()
         return f'Atualizado ID {id} da tabela'
 
-    def remove(self, search, id)-> str:
-        self.sessao.delete(search)
+    def remove(self, Model, id)-> str:
+        self.sessao.delete(self.get(Model, id))
         self.sessao.commit()
         self.sessao.close()
         return f'Removido a ID {id} da tabela'

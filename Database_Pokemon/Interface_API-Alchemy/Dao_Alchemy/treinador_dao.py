@@ -20,5 +20,4 @@ class TreinadorDao(BaseDao):
         return super().update(Treinador, id)
 
     def remove(self, id):
-        search = super().get(TreinadorModel, id)
-        return super().remove(search, id)
+        return super().remove(TreinadorModel, id)
