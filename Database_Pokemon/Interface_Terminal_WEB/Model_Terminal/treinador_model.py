@@ -22,14 +22,13 @@ class TreinadorModel(BaseAlchemy):
     FOREIGN KEY (ID_POKEMON) REFERENCES POKEMON (ID)
     """
 
-    def __init__(self, nome, sobrenome, idade, cidade,
-                 id_pokemon=None, id=0):
+    def __init__(self, id=0):
         self.id = id
-        self.nome = nome
-        self.sobrenome = sobrenome
-        self.idade = idade
-        self.cidade = cidade
-        self.id_pokemon = id_pokemon
+        self.nome = input("Digite o nome: ")
+        self.sobrenome = input("Digite o sobrenome: ")
+        self.idade = input("Digite a idade: ")
+        self.cidade = input("Digite a cidade: ")
+        self.pokemon_id = input("Digite a ID pokemon inicial: ")
 
     def __str__(self):
         return f"""Codigo: {self.id}
@@ -37,4 +36,4 @@ Nome: {self.nome}
 Sobrenome: {self.sobrenome}
 Idade: {int(self.idade)}
 Cidade: {self.cidade}
-Pokemon Inicial ID: {self.id_pokemon}"""
+Pokemon Inicial ID: {self.pokemon_id}"""

@@ -1,16 +1,18 @@
-import MySQLdb
-
-from Model_Alchemy.treinador_model import TreinadorModel
 from Dao_Alchemy.base_dao import BaseDao
+from Model_Alchemy.treinador_model import TreinadorModel
 
 
 class TreinadorDao(BaseDao):
 
     def get_all(self):
-        return super().get(TreinadorModel)
+        trainer_all = super().get(TreinadorModel)
+        list_trainer = []
+        for trainer in trainer_all:
+            list_trainer.append(self.dict(trainer))
+        return list_trainer
 
     def get_by_id(self, id):
-        return super().get(TreinadorModel, id)
+        return self.dict(super().get(TreinadorModel, id))
 
     def insert(self, Treinador: TreinadorModel):
         return super().insert(Treinador)
@@ -21,3 +23,12 @@ class TreinadorDao(BaseDao):
 
     def remove(self, id):
         return super().remove(TreinadorModel, id)
+
+    def dict(self, Treinador):
+        trainer = {"id": Treinador.id, "nome": Treinador.nome,
+                   "sobrenome": Treinador.sobrenome,
+                   "idade": Treinador.idade,
+                   "cidade": Treinador.cidade,
+                   "Treinador_id": Treinador.pokemon_id
+                   }
+        return trainer

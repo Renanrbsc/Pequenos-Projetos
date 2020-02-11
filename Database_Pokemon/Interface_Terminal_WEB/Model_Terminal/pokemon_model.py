@@ -19,21 +19,18 @@ class PokemonModel(BaseAlchemy):
     fraqueza2 = db.Column(db.String(length=50))
     descricao = db.Column(db.String(length=255))
 
-
-
-    def __init__(self, nome, tipo, altura, peso, categoria, habilidade,
-                 habilidade2, fraqueza, fraqueza2, descricao, id=None):
+    def __init__(self, id=None):
         self.id = id
-        self.nome = nome
-        self.tipo = tipo
-        self.altura = altura
-        self.peso = peso
-        self.categoria = categoria
-        self.habilidade = habilidade
-        self.habilidade2 = habilidade2
-        self.fraqueza = fraqueza
-        self.fraqueza2 = fraqueza2
-        self.descricao = descricao
+        self.nome = input("Digite o nome: ")
+        self.tipo = input("Digite o tipo: ")
+        self.altura = float(input("Digite a altura: "))
+        self.peso = float(input("Digite o peso: "))
+        self.categoria = input("Digite a categoria: ")
+        self.habilidade = input("Digite a habilidade: ")
+        self.habilidade2 = input("Digite a habilidade2: ")
+        self.fraqueza = input("Digite a fraqueza: ")
+        self.fraqueza2 = input("Digite a fraqueza2: ")
+        self.descricao = input("Digite a descricao: ")
 
     def __str__(self):
         descricao = self.descricao.replace('.', '.\n')

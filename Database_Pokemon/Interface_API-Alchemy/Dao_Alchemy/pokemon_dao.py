@@ -12,8 +12,7 @@ class PokemonDao(BaseDao):
         return list_pokemon
 
     def get_by_id(self, id):
-        pokemon = super().get(PokemonModel, id)
-        return self.dict(pokemon)
+        return self.dict(super().get(PokemonModel, id))
 
     def insert(self, Pokemon: PokemonModel):
         return super().insert(Pokemon)
