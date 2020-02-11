@@ -4,90 +4,65 @@
 		<title>POKEMON</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../static/assets/css/main.css"/>
-		<link rel="stylesheet" href="../static/assets/css/noscript.css"/>
+		<link rel="stylesheet" href="../static/css/Estilo Pagina web.css"/>
 	</head>
-	<body class="is-preload">
+	<body>
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+					<!-- Header -->
+					<header>
+
+						<!-- Menu -->
+						<ul >
+							<li class="menu"><a href="Listar Todos.html">Listar todos</a></li>
+							<li class="menu"><a href="Buscar id.html">Buscar ID </a></li>
+							<li class="menu"><a href="Inserir dados.html">Inserir dados</a></li>
+							<li class="menu"><a href="Alterar dados.html">Alterar dados</a></li>
+							<li class="menu"><a href="Deletar dados.html">Deletar dados</a></li>
+
+						</ul>
+						<div>
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="../static/images/Articuno.png" alt="" /></span><span class="title">Menu</span>
-								</a>
-
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
+							<a href="index.html" class="logo">
+								<span><img src="../static/images/Articuno.png" width="100px"/></span>
+							</a>
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="Listar Todos.html">Listar todos</a></li>
-							<li><a href="Buscar id.html">Buscar ID </a></li>
-							<li><a href="Inserir dados.html">Inserir dados</a></li>
-							<li><a href="Alterar dados.html">Alterar dados</a></li>
-							<li><a href="Deletar dados.html">Deletar dados</a></li>
-
-						</ul>
-					</nav>
 
 				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>Bem vindo<br/><br>
-								<p>Lista de Pokemon</p>
-							</header>
-							<section class="tiles">
+					<div>
+						<div>
+							<ul>
 								{% for i in lista %}
-									<article class="style2">
-										<span class="image">
-											<img src="../static/images/{{ i }}.png" alt="" />
-										</span>
-											<h2>{{ i }}</h2>
+									<div class="grade">
+										<div class="imagediv">
+											<img class="imagefundo" src="../static/images/{{ i }}.png" width="100px" />
+										</div>
+											<h2 >{{ i }}</h2>
 											<div class="content">
 												<p>Descricao.</p>
 											</div>
-									</article>
+									</div>
 								{% endfor %}
-							</section>
+							</ul>
 						</div>
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
+					<footer>
+						<div>
 							<section>
 								<h6>Renan Berti Ribas</h6>
-							</section>
-							<section>
 								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="https://github.com/Renanrbsc" class="icon brands style2 fa-github">GitHub</a></li>
-								</ul>
+								<li class="follow">
+									<a href="https://github.com/Renanrbsc">GitHub</a>
+								</li>
 							</section>
 						</div>
 					</footer>
 			</div>
-
-		<!-- Scripts -->
-			<script src="../static/assets/js/jquery.min.js"></script>
-			<script src="../static/assets/js/browser.min.js"></script>
-			<script src="../static/assets/js/breakpoints.min.js"></script>
-			<script src="../static/assets/js/util.js"></script>
-			<script src="../static/assets/js/main.js"></script>
-
 	</body>
 </html>
