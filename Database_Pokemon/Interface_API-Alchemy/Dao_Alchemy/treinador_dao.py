@@ -8,11 +8,12 @@ class TreinadorDao(BaseDao):
         trainer_all = super().get(TreinadorModel)
         list_trainer = []
         for trainer in trainer_all:
-            list_trainer.append(self.dict(trainer))
+            list_trainer.append(trainer.serialize())
         return list_trainer
 
     def get_by_id(self, id):
-        return self.dict(super().get(TreinadorModel, id))
+        treinador = super().get(TreinadorModel, id)
+        return treinador.serialize()
 
     def insert(self, Treinador: TreinadorModel):
         return super().insert(Treinador)
@@ -24,11 +25,3 @@ class TreinadorDao(BaseDao):
     def remove(self, id):
         return super().remove(TreinadorModel, id)
 
-    def dict(self, Treinador):
-        trainer = {"id": Treinador.id, "nome": Treinador.nome,
-                   "sobrenome": Treinador.sobrenome,
-                   "idade": Treinador.idade,
-                   "cidade": Treinador.cidade,
-                   "Treinador_id": Treinador.pokemon_id
-                   }
-        return trainer

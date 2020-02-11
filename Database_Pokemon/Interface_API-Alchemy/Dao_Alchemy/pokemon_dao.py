@@ -8,11 +8,12 @@ class PokemonDao(BaseDao):
         pokemon_all = super().get(PokemonModel)
         list_pokemon = []
         for pokemon in pokemon_all:
-            list_pokemon.append(self.dict(pokemon))
+            list_pokemon.append(pokemon.serialize())
         return list_pokemon
 
     def get_by_id(self, id):
-        return self.dict(super().get(PokemonModel, id))
+        pokemon = super().get(PokemonModel, id)
+        return pokemon.serialize()
 
     def insert(self, Pokemon: PokemonModel):
         return super().insert(Pokemon)
@@ -24,10 +25,3 @@ class PokemonDao(BaseDao):
     def remove(self, id):
         return super().remove(PokemonModel, id)
 
-    def dict(self, pokemon):
-        poke = {"codigo": pokemon.id, "nome": pokemon.nome, "tipo": pokemon.tipo, "altura": pokemon.altura,
-                "peso": pokemon.peso, "categoria": pokemon.categoria, "habilidade": pokemon.habilidade,
-                "habilidade2": pokemon.habilidade2, "fraqueza": pokemon.fraqueza,
-                "fraqueza2": pokemon.fraqueza2, "descricao": pokemon.descricao
-                }
-        return poke

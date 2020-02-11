@@ -5,7 +5,9 @@ from sqlalchemy.orm.session import sessionmaker
 class BaseDao:
     def __init__(self):
         # -- formato de string (SGBD+conector://user:passwd@url:port/database)
-        conexao = db.create_engine("mysql+mysqlconnector://root:@127.0.0.1:3306/Local")
+        # conexao = db.create_engine("mysql+mysqlconnector://root:@127.0.0.1:3306/Local")
+        conexao = db.create_engine("mysql+mysqlconnector://padawans16:lr2019@mysql.padawans.dev:3306/padawans16")
+
         criar_sessao = db.orm.sessionmaker()
         criar_sessao.configure(bind=conexao)
         self.sessao = criar_sessao()

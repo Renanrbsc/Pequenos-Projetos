@@ -35,6 +35,13 @@ class PokemonModel(BaseAlchemy):
         self.fraqueza2 = fraqueza2
         self.descricao = descricao
 
+    def serialize(self):
+        return {"id": self.id, "nome": self.nome, "tipo": self.tipo, "altura": self.altura,
+                "peso": self.peso, "categoria": self.categoria, "habilidade": self.habilidade,
+                "habilidade2": self.habilidade2, "fraqueza": self.fraqueza,
+                "fraqueza2": self.fraqueza2, "descricao": self.descricao
+                }
+
     def __str__(self):
         descricao = self.descricao.replace('.', '.\n')
         return f"""Codigo: {self.id}
