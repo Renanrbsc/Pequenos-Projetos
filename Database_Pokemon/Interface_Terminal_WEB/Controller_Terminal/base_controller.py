@@ -8,6 +8,9 @@ class BaseController:
             return self.dao.get_by_id(id)
         return self.dao.get_all()
 
+    def get_image(self):
+        return self.dao.get_image()
+
     def post(self, Model):
         return self.dao.insert(Model)
 

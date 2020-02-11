@@ -13,6 +13,9 @@ class PokemonController(BaseController):
     def get_by_id(self, id):
         return super().get(id)
 
+    def get_image(self):
+        return super().get_image()
+
     def post(self, Pokemon):
         return super().post(Pokemon)
 

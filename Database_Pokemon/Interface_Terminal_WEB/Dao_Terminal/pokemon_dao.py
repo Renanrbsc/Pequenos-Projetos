@@ -10,6 +10,9 @@ class PokemonDao(BaseDao):
     def get_by_id(self, id):
         return super().get(PokemonModel,id)
 
+    def get_image(self):
+        return super().get_image(PokemonModel)
+
     def insert(self, Pokemon: PokemonModel):
         return super().insert(Pokemon)
 
