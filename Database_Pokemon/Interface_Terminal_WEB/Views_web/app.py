@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import sys
 
 sys.path.append(r'C:\Users\Usuario\Documents\GitHub\Projetos-Testes\Database_Pokemon\Interface_Terminal_WEB')
+sys.path.append(r'C:\Users\900159\Documents\GitHub\Projetos-Testes\Database_Pokemon\Interface_Terminal_WEB')
 
 
 app = Flask(__name__)
