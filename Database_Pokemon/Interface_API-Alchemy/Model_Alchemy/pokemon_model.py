@@ -19,8 +19,6 @@ class PokemonModel(BaseAlchemy):
     fraqueza2 = db.Column(db.String(length=50))
     descricao = db.Column(db.String(length=255))
 
-
-
     def __init__(self, nome, tipo, altura, peso, categoria, habilidade,
                  habilidade2, fraqueza, fraqueza2, descricao, id=None):
         self.id = id

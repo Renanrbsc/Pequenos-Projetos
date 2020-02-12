@@ -2,7 +2,7 @@ import sqlalchemy as db
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# from Model_Alchemy.pokemon_model import PokemonModel
+from Model_Alchemy.pokemon_model import PokemonModel
 
 BaseAlchemy = declarative_base()
 
@@ -15,11 +15,11 @@ class TreinadorModel(BaseAlchemy):
     sobrenome = db.Column(db.String(length=100))
     idade = db.Column(db.Integer)
     cidade = db.Column(db.String(length=100))
-    pokemon_id = db.Column(db.Integer, db.ForeignKey("POKEMON.id"))
-    # pokemon = relationship(PokemonModel)
+    pokemon_id = db.Column(db.Integer, db.ForeignKey("POKEMON.ID"))
+    pokemon = relationship(PokemonModel)
 
     """
-    FOREIGN KEY (ID_POKEMON) REFERENCES POKEMON (ID)
+    FOREIGN KEY (POKEMON_ID) REFERENCES POKEMON (ID)
     """
 
     def __init__(self, id=0):
