@@ -1,12 +1,12 @@
 from flask import request
 
-from Dao_Terminal.treinador_dao import TreinadorDao
+from Dao_Terminal.pokedex_dao import PokedexDao
 from Controller_Terminal.base_controller import BaseController
 
 
-class TreinadorController(BaseController):
+class PokedexController(BaseController):
     def __init__(self):
-        super().__init__(TreinadorDao())
+        super().__init__(PokedexDao())
 
     def get_all(self):
         return super().get()
@@ -14,11 +14,11 @@ class TreinadorController(BaseController):
     def get_by_id(self, id):
         return super().get(id)
 
-    def post(self, Treinador):
-        return super().post(Treinador)
+    def post(self, Pokedex):
+        return super().post(Pokedex)
 
-    def put(self, id, Treinador):
-        return super().put(id, Treinador)
+    def put(self, id, Pokedex):
+        return super().put(id, Pokedex)
 
     def delete(self, id):
         return super().delete(id)

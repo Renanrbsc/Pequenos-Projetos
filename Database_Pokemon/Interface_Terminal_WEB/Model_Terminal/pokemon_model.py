@@ -19,6 +19,7 @@ class PokemonModel(BaseAlchemy):
     fraqueza2 = db.Column(db.String(length=50))
     descricao = db.Column(db.String(length=255))
 
+
     def __init__(self, id=None):
         self.id = id
         self.nome = input("Digite o nome: ")
@@ -44,6 +45,6 @@ Habilidade: {self.habilidade}
 Habilidade2: {self.habilidade}
 Fraqueza: {self.fraqueza}
 Fraqueza2: {self.fraqueza2}
-Descricao: {descricao}"""
+Descricao: {descricao}\n"""
 
 
