@@ -1,6 +1,6 @@
 from Dao_Alchemy.base_dao import BaseDao
 from Model_Alchemy.pokemon_model import PokemonModel
-
+import json
 
 class PokemonDao(BaseDao):
 
@@ -9,6 +9,8 @@ class PokemonDao(BaseDao):
         list_pokemon = []
         for pokemon in pokemon_all:
             list_pokemon.append(pokemon.serialize())
+        with open('data_pokemon.json','a') as arq:
+            json.dump(list_pokemon, arq)
         return list_pokemon
 
     def get_by_id(self, id):

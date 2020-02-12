@@ -1,5 +1,3 @@
-from flask import request
-
 from Dao_Terminal.treinador_dao import TreinadorDao
 from Controller_Terminal.base_controller import BaseController
 

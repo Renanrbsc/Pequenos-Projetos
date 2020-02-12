@@ -1,15 +1,18 @@
 from Controller_Terminal.pokemon_controller import PokemonController
 from Controller_Terminal.treinador_controller import TreinadorController
 from Controller_Terminal.pokedex_controller import PokedexController
+from Controller_Terminal.administrator_controller import AdministratorController
 from Model_Terminal.pokemon_model import PokemonModel
 from Model_Terminal.treinador_model import TreinadorModel
 from Model_Terminal.pokedex_model import PokedexModel
+from Model_Terminal.administrator_model import AdministratorModel
 
 class Views:
     def __init__(self):
         self.Poke_controller = PokemonController()
         self.Trainer_controller = TreinadorController()
         self.Pokedex_controller = PokedexController()
+        self.Admin_controller = AdministratorController()
         self.modelController = None
         self.op_menu = None
         self.op = None
@@ -19,15 +22,21 @@ class Views:
     def menu(self):
         print('-=' * 20, '\n1- MENU POKEMON')
         print('2- MENU TREINADOR')
-        print('3- MENU POKEDEX\n', '-=' * 20)
+        print('3- MENU POKEDEX')
+        print('4- MENU ADMINISTRADOR\n', '-=' * 20)
         self.op_menu = int(input("Digite a opcao: "))
         if self.op_menu == 1: self.table = 'Pokemon'
         elif self.op_menu == 2: self.table = 'Treinador'
-        else: self.table = 'Pokedex'
+        elif self.op_menu == 3: self.table = 'Pokedex'
+        elif self.op_menu == 4: self.table = 'Administrador'
+        else:
+            print(f"Menu {self.op_menu} não existe!")
+            return self.menu()
 
         if self.op_menu == 1: self.modelController = self.Poke_controller
         elif self.op_menu == 2: self.modelController = self.Trainer_controller
-        else: self.modelController = self.Pokedex_controller
+        elif self.op_menu == 3: self.modelController = self.Pokedex_controller
+        elif self.op_menu == 4: self.modelController = self.Admin_controller
 
         print('-=' * 20)
         print(f'1 - Listar {self.table}')
@@ -45,7 +54,8 @@ class Views:
         if self.op == 3 or self.op == 4:
             if self.op_menu == 1: model = PokemonModel()
             elif self.op_menu == 2: model = TreinadorModel()
-            else: model = PokedexModel()
+            elif self.op_menu == 3: model = PokedexModel()
+            elif self.op_menu == 4: model = AdministratorModel()
             return model
 
     def conditions(self):

@@ -1,5 +1,3 @@
-from flask import request
-
 from Dao_Terminal.pokedex_dao import PokedexDao
 from Controller_Terminal.base_controller import BaseController
 

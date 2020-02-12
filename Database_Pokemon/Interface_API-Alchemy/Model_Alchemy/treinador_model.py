@@ -16,7 +16,6 @@ class TreinadorModel(BaseAlchemy):
 	idade = db.Column(db.Integer)
 	cidade = db.Column(db.String(length=100))
 	pokemon_id = db.Column(db.Integer, db.ForeignKey("POKEMON.id"))
-	pokemon = relationship(PokemonModel)
 
 	"""
     FOREIGN KEY (ID_POKEMON) REFERENCES POKEMON (ID)
