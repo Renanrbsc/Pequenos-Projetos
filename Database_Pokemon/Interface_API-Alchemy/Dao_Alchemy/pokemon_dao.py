@@ -9,8 +9,6 @@ class PokemonDao(BaseDao):
         list_pokemon = []
         for pokemon in pokemon_all:
             list_pokemon.append(pokemon.serialize())
-        with open('data_pokemon.json','a') as arq:
-            json.dump(list_pokemon, arq)
         return list_pokemon
 
     def get_by_id(self, id):
