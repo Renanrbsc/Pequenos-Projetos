@@ -28,13 +28,13 @@ function validar(){
         return false;
 
     }if(password.value == ""){
-        exibirErro.innerHTML = "O campo Password não pode estar vazio.";
+        exibirErro.innerHTML = "O campo Senha não pode estar vazio.";
         exibirErro.style.display = "block";
         nome.focus;
         return false;
 
     }else if(password.value.length < 3){
-        exibirErro.innerHTML = "O campo Password deve ter pelo menos três caracteres.";
+        exibirErro.innerHTML = "O campo Senha deve ter pelo menos três caracteres.";
         exibirErro.style.display = "block";
         nome.focus;
         return false;

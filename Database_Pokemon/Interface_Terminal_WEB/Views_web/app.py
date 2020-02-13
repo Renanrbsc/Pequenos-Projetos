@@ -19,7 +19,7 @@ def menu_escolha():
     return render_template('menu_escolha.html')
 
 
-@app.route('/listarpokemon')
+@app.route('/menupokemon')
 def listar_todos_pokemon():
     poke = PokemonController()
     lista = poke.get_all()
