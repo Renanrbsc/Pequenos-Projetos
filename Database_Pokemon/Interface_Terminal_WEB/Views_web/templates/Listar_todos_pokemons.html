@@ -4,10 +4,7 @@
 		<title>POKEMON</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--CSS-->
 		<link rel="stylesheet" href="../static/css/Estilo Pagina web.css"/>
-		<!--JavaScript-->
-        <script src="../static/js/Validação.js"></script>
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -38,20 +35,24 @@
 				<!-- Main -->
 					<div>
 						<div>
-							<form action="listarpokemon">
-								<h1 id="validar"></h1>
-								<label>Informe seu Login</label><br><br>
-								<input type="text" placeholder="Nome" id="username" onKeyup="ocultarErro()">
-
-								<input type="password" placeholder="Senha" id="password" onKeyup="ocultarErro()">
-
-								<input type="submit" value="Login" onclick="return validar()">
-							</form>
+							<ul>
+								{% for i in lista %}
+									<div class="grade">
+										<div class="imagediv">
+											<img class="imagefundo" src="../static/images/{{ i }}.png" width="100px" />
+										</div>
+											<h2 >{{ i }}</h2>
+											<div class="content">
+												<p>Descricao.</p>
+											</div>
+									</div>
+								{% endfor %}
+							</ul>
 						</div>
 					</div>
 
 				<!-- Footer -->
-					<footer id="footermenu">
+					<footer>
 						<div>
 							<section>
 								<h6>Renan Berti Ribas</h6>

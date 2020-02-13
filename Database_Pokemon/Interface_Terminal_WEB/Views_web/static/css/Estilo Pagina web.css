@@ -32,6 +32,43 @@ footer{
     color: #ffffff;
     padding: 15px;
 }
+#footermenu{
+    padding: 0px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+label{
+font-family: Impact;
+font-size: 20px;
+color: #4F4F4F;
+}
+form{
+    width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border: solid 5px #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"]{
+    width: 588px;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="submit"]{
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    padding: 5px;
+}
 
 /*Links*/
 a{
@@ -43,6 +80,17 @@ a{
 }
 a:hover{
     background-color: #cccccc;
+}
+/*IDs*/
+
+#validar{
+    background-color: #ff0000;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    display: none;
+    border-radius: 1em;
 }
 
 /*class*/
