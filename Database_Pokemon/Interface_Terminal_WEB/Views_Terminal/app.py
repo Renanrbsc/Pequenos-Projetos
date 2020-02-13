@@ -7,6 +7,7 @@ from Model_Terminal.treinador_model import TreinadorModel
 from Model_Terminal.pokedex_model import PokedexModel
 from Model_Terminal.administrator_model import AdministratorModel
 
+
 class Views:
     def __init__(self):
         self.Poke_controller = PokemonController()
@@ -14,10 +15,24 @@ class Views:
         self.Pokedex_controller = PokedexController()
         self.Admin_controller = AdministratorController()
         self.modelController = None
+        self.login = None
+        self.passwd = None
         self.op_menu = None
         self.op = None
         self.id = None
         self.table = ''
+
+    def authentication(self):
+        admin_all = self.Admin_controller.get_all()
+        for admin in admin_all:
+            if str(self.login).lower() == str(admin.username).lower()\
+                    or str(self.login).lower() == str(admin.email).lower():
+                if self.psswd == str(admin.password).lower():
+                    return self.menu()
+        print('-=' * 20, '\nLogin Administrador')
+        self.login = input("Insira seu username ou email: ")
+        self.psswd = input("Informe sua senha: ")
+        return self.authentication()
 
     def menu(self):
         print('-=' * 20, '\n1- MENU POKEMON')
@@ -88,5 +103,5 @@ class Views:
 views = Views()
 
 while True:
-    views.menu()
+    views.authentication()
     views.conditions()

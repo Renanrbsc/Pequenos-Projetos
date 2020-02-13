@@ -20,7 +20,7 @@ class PokedexModel(BaseAlchemy):
 
     def __init__(self,registro=None):
         self.registro = registro
-        self.versao = input("Digite a verao da pokedex: ")
+        self.versao = input("Digite a versao da pokedex: ")
         self.cor = input("Digite a cor da pokedex: ")
         self.treinador_id = input("Digite a ID do treinador: ")
         self.pokemon_id = input("Digite a ID do pokemon: ")
