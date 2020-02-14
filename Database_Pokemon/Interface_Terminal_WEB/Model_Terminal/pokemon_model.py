@@ -35,6 +35,7 @@ class PokemonModel(BaseAlchemy):
 
     def list(self):
         lista = []
+        descricao = self.descricao.replace('.', '.\n')
         lista.append(self.id)
         lista.append(self.nome)
         lista.append(self.tipo)
@@ -45,7 +46,7 @@ class PokemonModel(BaseAlchemy):
         lista.append(self.habilidade2)
         lista.append(self.fraqueza)
         lista.append(self.fraqueza2)
-        lista.append(self.descricao)
+        lista.append(descricao)
         return lista
 
     def __str__(self):
