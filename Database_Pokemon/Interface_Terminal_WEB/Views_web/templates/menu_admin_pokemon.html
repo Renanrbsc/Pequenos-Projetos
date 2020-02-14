@@ -25,7 +25,7 @@
 						<div>
 
 							<!-- Logo -->
-							<a href="index.html" class="logo">
+							<a href="/" class="logo">
 								<span><img src="../static/images/Articuno.png" width="100px"/></span>
 							</a>
 							<label class="logotext">Interface Web - Admin </label>
@@ -55,7 +55,7 @@
 									</thead>
 									<tbody>
 									{% for dados in lista %}
-										<tr>
+										<tr >
 											<th>{{dados[0]}}</th>
 											<th>{{dados[1]}}</th>
 											<th>{{dados[2]}}</th>
@@ -70,6 +70,9 @@
 												<select style="width:20px;">
 													<option>{{dados[10]}}</option>
 												</select>
+											</th>
+											<th>
+												<input style="width:20px;" type="radio" name="id" value="{{dados[0]}}">
 											</th>
 										</tr>
 									{% endfor %}

@@ -8,7 +8,7 @@ from Controller_Terminal.pokemon_controller import PokemonController
 from Controller_Terminal.administrator_controller import AdministratorController
 
 app = Flask(__name__)
-
+login = []
 
 @app.route('/')
 def index():
@@ -17,27 +17,34 @@ def index():
 
 
 @app.route('/login')
-def login():
+def login_admin():
     return render_template('login.html')
 
 
 @app.route('/menuadmin')
 def menu_admin():
-    Admin_controller = AdministratorController()
+    if login:
+        return render_template('menu_admin.html')
+    else:
+        Admin_controller = AdministratorController()
+        admin_all = Admin_controller.get_all()
+        username = request.args['username']
+        passwd = request.args['password']
 
-    admin_all = Admin_controller.get_all()
-    username = request.args['username']
-    passwd = request.args['password']
-    for admin in admin_all:
-        if str(username).lower() == str(admin.username).lower() \
-                or str(username).lower() == str(admin.email).lower():
-            if passwd == str(admin.password).lower():
-                return render_template('menu_admin.html')
-    return redirect('/login')
+        for admin in admin_all:
+            if str(username).lower() == str(admin.username).lower() \
+                    or str(username).lower() == str(admin.email).lower():
+                if passwd == str(admin.password).lower():
+                    login.append(username)
+                    login.append(passwd)
+                    return render_template('menu_admin.html')
+        return redirect('/login')
 
 
 @app.route('/menuadminpokemon')
 def menu_admin_pokemon():
+    if not login:
+        return redirect('/login')
     poke = PokemonController()
     lista_dados = poke.get_all()
     lista = []
