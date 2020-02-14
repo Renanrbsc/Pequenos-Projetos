@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>POKEMON</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/Estilo Pagina web.css"/>
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div>
+
+					<!-- Header -->
+					<header>
+
+						<!-- Menu -->
+						<ul >
+							<li class="menu"><a href="Buscar id.html">Buscar ID </a></li>
+							<li class="menu"><a href="Inserir dados.html">Inserir dados</a></li>
+							<li class="menu"><a href="Alterar dados.html">Alterar dados</a></li>
+							<li class="menu"><a href="Deletar dados.html">Deletar dados</a></li>
+
+						</ul>
+
+						<div>
+
+							<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span><img src="../static/images/Articuno.png" width="100px"/></span>
+							</a>
+							<label class="logotext">Interface Web - Admin </label>
+						</div>
+					</header>
+
+
+				<!-- Main -->
+					<div align="center">
+						<div>
+							<form class="formadmin">
+								<h1 id="validar"></h1>
+								<label>Menu Pokemon admin</label><br><br>
+								<table border="1">
+									<thead>
+										<th>ID</th>
+										<th>Nome</th>
+										<th>Tipo</th>
+										<th>Altura</th>
+										<th>Peso</th>
+										<th>Categoria</th>
+										<th>Habilidade</th>
+										<th>Habilidade2</th>
+										<th>Fraqueza</th>
+										<th>Fraqueza2</th>
+										<th>Descricao</th>
+									</thead>
+									<tbody>
+									{% for dados in lista %}
+										<tr>
+											<th>{{dados[0]}}</th>
+											<th>{{dados[1]}}</th>
+											<th>{{dados[2]}}</th>
+											<th>{{dados[3]}}</th>
+											<th>{{dados[4]}}</th>
+											<th>{{dados[5]}}</th>
+											<th>{{dados[6]}}</th>
+											<th>{{dados[7]}}</th>
+											<th>{{dados[8]}}</th>
+											<th>{{dados[9]}}</th>
+											<th>
+												<select style="width:20px;">
+													<option>{{dados[10]}}</option>
+												</select>
+											</th>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer>
+						<div>
+							<section>
+								<br>
+								<h6>Renan Berti Ribas</h6>
+								<h2>Follow</h2>
+								<li class="follow">
+									<a href="https://github.com/Renanrbsc">GitHub</a>
+								</li>
+							</section>
+						</div>
+					</footer>
+			</div>
+	</body>
+</html>

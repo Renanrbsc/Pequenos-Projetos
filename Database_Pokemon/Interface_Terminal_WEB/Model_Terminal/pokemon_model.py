@@ -33,6 +33,21 @@ class PokemonModel(BaseAlchemy):
         self.fraqueza2 = input("Digite a fraqueza2: ")
         self.descricao = input("Digite a descricao: ")
 
+    def list(self):
+        lista = []
+        lista.append(self.id)
+        lista.append(self.nome)
+        lista.append(self.tipo)
+        lista.append(self.altura)
+        lista.append(self.peso)
+        lista.append(self.categoria)
+        lista.append(self.habilidade)
+        lista.append(self.habilidade2)
+        lista.append(self.fraqueza)
+        lista.append(self.fraqueza2)
+        lista.append(self.descricao)
+        return lista
+
     def __str__(self):
         descricao = self.descricao.replace('.', '.\n')
         return f"""Codigo: {self.id}

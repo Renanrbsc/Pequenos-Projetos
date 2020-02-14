@@ -4,10 +4,7 @@
 		<title>POKEMON</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--CSS-->
 		<link rel="stylesheet" href="../static/css/Estilo Pagina web.css"/>
-		<!--JavaScript-->
-        <script src="../static/js/Validação.js"></script>
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -16,13 +13,20 @@
 					<!-- Header -->
 					<header>
 
+						<!-- Menu -->
+						<ul >
+							<li class="menu"><a href="Listar Todos.html">Listar todos</a></li>
+							<li class="menu"><a href="Buscar id.html">Buscar ID </a></li>
+
+						</ul>
+
 						<div>
 
 							<!-- Logo -->
 							<a href="index.html" class="logo">
 								<span><img src="../static/images/Articuno.png" width="100px"/></span>
 							</a>
-							<label class="logotext">Interface Web Pokemon</label>
+							<label class="logotext">Interface Web - Admin </label>
 						</div>
 					</header>
 
@@ -30,14 +34,22 @@
 				<!-- Main -->
 					<div>
 						<div>
-							<form action="menu">
+							<form>
 								<h1 id="validar"></h1>
-								<label>Informe seu Login</label><br><br>
-								<input type="text" placeholder="Nome" name="username" id="username" onKeyup="ocultarErro()">
+								<label>Menu Pokemon admin</label><br><br>
+								<a href="/menuadminpokemon" class="grademenu">
+									<div>
+										<img class="imagemenuadmin" src="../static/images/pokemon_menu.png"/>
+									</div>
+									<h2 >Pokemon Menu</h2>
+								</a>
 
-								<input type="password" placeholder="Senha" name="password" id="password" onKeyup="ocultarErro()">
-
-								<input type="submit" value="Login" onclick="return validar()">
+								<a href="/menuadmintreinador" class="grademenu">
+									<div>
+										<img class="imagemenuadmin" src="../static/images/treinador_menu.png"/>
+									</div>
+									<h2 >Treinador Menu</h2>
+								</a>
 							</form>
 						</div>
 					</div>

@@ -12,23 +12,39 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('menu_escolha.html', login = None)
 
 
-@app.route('/menu')
-def menu_escolha():
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/menuadmin')
+def menu_admin():
     Admin_controller = AdministratorController()
 
     admin_all = Admin_controller.get_all()
-    login = request.args['username']
-    psswd = request.args['password']
+    username = request.args['username']
+    passwd = request.args['password']
     for admin in admin_all:
-        if str(login).lower() == str(admin.username).lower() \
-                or str(login).lower() == str(admin.email).lower():
-            if psswd == str(admin.password).lower():
-                return render_template('menu_escolha.html')
-    return redirect('/')
+        if str(username).lower() == str(admin.username).lower() \
+                or str(username).lower() == str(admin.email).lower():
+            if passwd == str(admin.password).lower():
+                return render_template('menu_admin.html')
+    return redirect('/login')
 
+
+@app.route('/menuadminpokemon')
+def menu_admin_pokemon():
+    poke = PokemonController()
+    lista_dados = poke.get_all()
+    lista = []
+    for dados in lista_dados:
+        lista.append(dados.list())
+
+    return render_template('menu_admin_pokemon.html', lista = lista)
 
 @app.route('/menupokemon')
 def listar_todos_pokemon():
