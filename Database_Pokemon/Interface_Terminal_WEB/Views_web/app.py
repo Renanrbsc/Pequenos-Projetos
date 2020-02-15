@@ -56,12 +56,12 @@ def menu_admin_pokemon():
 @app.route('/menupokemon')
 def listar_todos_pokemon():
     poke = PokemonController()
-    lista = poke.get_all()
-    lista_nome = []
-    for i in lista:
-        lista_nome.append(i.nome)
+    lista_dados = poke.get_all()
+    lista = []
+    for dados in lista_dados:
+        lista.append(dados.list())
 
-    return render_template('Listar_todos_pokemons.html', lista=lista_nome)
+    return render_template('Listar_todos_pokemons.html', lista=lista)
 
 
 app.run(debug=True, port=80)

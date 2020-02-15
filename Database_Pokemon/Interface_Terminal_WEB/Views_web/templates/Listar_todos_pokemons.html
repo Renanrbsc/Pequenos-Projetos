@@ -5,11 +5,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/css/Estilo Pagina web.css"/>
+
 	</head>
 	<body>
 		<!-- Wrapper -->
 			<div>
-
 					<!-- Header -->
 					<header>
 
@@ -35,10 +35,26 @@
 							<ul>
 								{% for i in lista %}
 									<div class="grade">
-										<div class="imagediv">
-											<img class="imagemenu" src="../static/images/{{ i }}.png"/>
-										</div>
-											<h2 >{{ i }}</h2>
+											<div class="imagemenu" style=" background-image: url(../static/images/{{ i[1] }}.png)">
+												<div class="texto">
+													<h2>Informação
+													</h2>
+													<h3>
+														ID Pokedex: {{i[0]}}<br>
+														Nome: {{i[1]}}<br>
+														Tipo: {{i[2]}}<br>
+														Altura: {{i[3]}}<br>
+														Peso: {{i[4]}}<br>
+														Categoria: {{i[5]}}<br>
+														Habilidade: {{i[6]}}<br>
+														Habilidade2: {{i[7]}}<br>
+														Fraqueza: {{i[8]}}<br>
+														Fraqueza2: {{i[9]}}<br>
+														Descrição: {{i[10]}}
+													</h3>
+												</div>
+											</div>
+										<h2 >{{ i[1] }}</h2>
 									</div>
 								{% endfor %}
 							</ul>
