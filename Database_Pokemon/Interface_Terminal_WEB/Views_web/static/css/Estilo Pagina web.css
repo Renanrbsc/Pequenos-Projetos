@@ -180,15 +180,12 @@ a:hover{
 
 /*IMAGES BODY*/
 .imagelistar{
-    width: 50%;
-    height: 50%;
-    float: left;
-    position: relative;
-}
-.imagemenu{
     width: 100%;
     height: 380px;
     background-size:100% auto;
+}
+.imagemenu{
+    width: 100%;
 }
 .texto{
   padding:20px;
