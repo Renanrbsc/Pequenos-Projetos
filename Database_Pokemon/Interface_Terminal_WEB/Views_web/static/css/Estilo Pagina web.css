@@ -206,7 +206,7 @@ a:hover{
 }
 
 .formadmin{
-    width: 1000px;
+    width: 1200px;
     margin: 30px auto;
     background-color: #ffffff;
     border: solid 5px #cccccc;
@@ -215,7 +215,27 @@ a:hover{
     text-align: center;
 }
 
+.editar{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}.editar:hover {
+    background-color: white;
+    color: blue;
+}
 
+.excluir{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}.excluir:hover {
+    background-color: white;
+    color: red;
+}
 
 /*FOLLOW*/
 
