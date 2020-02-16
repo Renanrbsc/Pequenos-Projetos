@@ -769,7 +769,7 @@ Golisopod;Bug;2.0;108.0;Hard Scale;Emergency Exit;;Flying;Electric;With a flashi
 Sandygast;Ghost;0.5;70.0;Sand Heap;Water Compaction;;Ghost;Dark;Born from a sand mound playfully built by achild, this Pokémon embodies the grudges ofthe departed.
 Palossand;Ghost;1.3;250.0;Sand Castle;Water Compaction;;Ghost;Dark;Possessed people controlled by this Pokémontransformed its sand mound into a castle. As itevolved, its power to curse grew ever stronger.
 Pyukumuku;Water;0.3;1.2;Sea Cucumber;Innards Out;;Grass;Electric;It lives in shallow seas, such as areas near abeach. It can eject its internal organs, which ituses to engulf its prey or battle enemies.
-Type: Null;Normal;1.9;120.5;Synthetic;Battle Armor;;Fighting;;The heavy control mask it wears suppresses itsintrinsic capabilities. This Pokémon has somehidden special power.
+Type Null;Normal;1.9;120.5;Synthetic;Battle Armor;;Fighting;;The heavy control mask it wears suppresses itsintrinsic capabilities. This Pokémon has somehidden special power.
 Silvally;Normal;2.3;100.5;Synthetic;RKS System;;Fighting;;Its trust in its partner is what awakens it.This Pokémon is capable of changing its type,a flexibility that is well displayed in battle.
 Minior;Rock;0.3;40.0;Meteor;Shields Down;;Steel;Water;Originally making its home in the ozone layer,it hurtles to the ground when the shell enclosingits body grows too heavy.
 Komala;Normal;0.4;19.9;Drowsing;Comatose;;Fighting;;It is born asleep, and it dies asleep. All itsmovements are apparently no more than theresults of it tossing and turning in its dreams.
