@@ -30,7 +30,7 @@ def login_admin():
                 login.append(username)
                 login.append(passwd)
                 return render_template('menu_admin.html')
-    return redirect('/login')
+    return render_template('login.html')
 
 
 @app.route('/menuadmin')
@@ -45,7 +45,7 @@ def menu_admin():
 @app.route('/menuadminpokemon')
 def menu_admin_pokemon():
     if not login:
-        return redirect('/login')
+        return redirect('/menuadmin')
     poke = PokemonController()
     lista_dados = poke.get_all()
     lista = []
@@ -55,11 +55,20 @@ def menu_admin_pokemon():
     return render_template('menu_admin_pokemon.html', lista=lista)
 
 
+@app.route('/menuadmin/adicionarpokemon')
+def adicionar_pokemon():
+    if not login:
+        return redirect('/menuadminpokemon')
+    return render_template('pokemon_admin_dados.html')
+
+
 @app.route('/menuadminpokemon/editarpokemon')
 def editar_pokemon():
     if not login:
-        return redirect('/login')
-    return render_template('menu_admin_pokemon.html')
+        return redirect('/menuadminpokemon')
+    id = request.args['id']
+    print(id)
+    return render_template('pokemon_admin_dados.html')
 
 
 @app.route('/sair')

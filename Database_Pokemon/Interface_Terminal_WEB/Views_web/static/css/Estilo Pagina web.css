@@ -71,7 +71,14 @@ input[type="text"]{
     margin-bottom: 10px;
     text-align: center;
 }
-
+textarea{
+    width: 588px;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
 input[type="submit"]{
     border: solid 1px #cccccc;
     border-radius: 5px;
