@@ -1,2 +1,3 @@
-# TrabalhosAPI
-Repositório para desenvolvimentos de Interface de Programação de Aplicações
+# Praticando-Python
+Repositório para desenvolvimento de Atividades e Projetos livres.
+
