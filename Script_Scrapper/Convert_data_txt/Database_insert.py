@@ -4,7 +4,7 @@ import MySQLdb
 # -- lançamento de codigo em cada sublista
 
 list_pokemon = []
-with open('Desbravando-Algoritmos\Python\Extração de dados\Dados txt\dados_pokemon.txt', encoding = 'utf-8') as arq:
+with open('Script_Scrapper\Convert_data_txt\dados_pokemon.txt', encoding = 'utf-8') as arq:
     i = 1
     for dados in arq:
         list_cont = []
@@ -23,10 +23,9 @@ with open('Desbravando-Algoritmos\Python\Extração de dados\Dados txt\dados_pok
 
 
 
-conexao = MySQLdb.connect(host = 'mysql.padawans.dev',
-                          database = 'padawans16',
-                          user = 'padawans16',
-                          passwd = 'lr2019')
+conexao = MySQLdb.connect(host = '127.0.0.1',
+                          database = 'Pokedex',
+                          user = 'root')
 
 cursor = conexao.cursor()
 
